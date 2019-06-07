@@ -137,7 +137,11 @@ public class TkUI {
 					tk.saveValue = 0;
 					tk.part = 0;
 
-				} catch (RuntimeException e) {} catch (InterruptedException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				} catch (InterruptedException e) {
+					System.out.println("Exception");
+				}
 			}
 			else {
 				try {
@@ -151,7 +155,9 @@ public class TkUI {
 					tk.saveValue = 0;
 					tk.part++;
 
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 		}
 	};
@@ -164,7 +170,9 @@ public class TkUI {
 
 				tk.setTimePart(0);
 				showSet();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener mlistener = new ActionListener() {
@@ -173,7 +181,9 @@ public class TkUI {
 				if(view.checkfunc(1) == 0) {
 					return;
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener rlistener = new ActionListener() {
@@ -185,7 +195,9 @@ public class TkUI {
 
 				tk.setTimePart(1);
 				showSet();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

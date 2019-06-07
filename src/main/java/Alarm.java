@@ -13,7 +13,6 @@ public class Alarm {
 
     public Buzzer buzzer;
     private View view;
-    private int funcNum = 4;
     public Vector alarm = new Vector();
     //Delete eLCD[]
     //Added from here
@@ -71,9 +70,9 @@ public class Alarm {
         view.hour.setText(vhour);
         view.hour10.setText(vhour10);
         if(vison == 1)
-            view.setDot(29);
+            view.setDot(30);
         else
-            view.removeDot(29);
+            view.removeDot(30);
         if(vsun == 1)
             view.setDot(0);
         else
@@ -329,6 +328,7 @@ public class Alarm {
     public void reqStopAlarmBuzzer() {
         // TODO implement here
         buzzer.reqStop(2);
+
     }
 
     public void reqSetSnooze() {

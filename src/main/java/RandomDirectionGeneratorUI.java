@@ -20,7 +20,9 @@ public class RandomDirectionGeneratorUI {
 				if(view.checkfunc(6) == 0) {
 					return;
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener slistener = new ActionListener() {
@@ -34,10 +36,10 @@ public class RandomDirectionGeneratorUI {
 					view.removeDot(rdg.result-1);
 					rdg.result = 0;
 				}
-
-				System.out.println("UI req");
 				rdg.reqRandomDirection();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener mlistener = new ActionListener() {
@@ -51,7 +53,9 @@ public class RandomDirectionGeneratorUI {
 				}
 				view.initDot();
 				rdg.result = 0;
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener rlistener = new ActionListener() {
@@ -60,7 +64,9 @@ public class RandomDirectionGeneratorUI {
 				if(view.checkfunc(6) == 0) {
 					return;
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

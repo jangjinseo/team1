@@ -19,7 +19,7 @@ public class Stopwatch{
     public int sec = 0;
     public int min = 0;
     public Thread runstop;
-    public int paused = 1;//ÃÊ±â¿£ 1
+    public int paused = 1;//ï¿½Ê±â¿£ 1
     public void reqStartStopwatch() {
         start();
     }
@@ -42,13 +42,17 @@ public class Stopwatch{
                             }
                             try {
                                 Thread.sleep(10);
-                            } catch (InterruptedException e) {}
+                            } catch (InterruptedException e) {
+                                System.out.println("Exception");
+                            }
                         }
                     }
 
                     try {
                         Thread.sleep(10);
-                    } catch (InterruptedException e) {}
+                    } catch (InterruptedException e) {
+                        System.out.println("Exception");
+                    }
                     milsec++;
                     if(milsec == 100) {
                         sec++;
@@ -80,11 +84,11 @@ public class Stopwatch{
 
     }
 
-    public void reqPause() {//½ÃÀÛÈÄ ¸ØÃçÀÖÀ¸¸é 2
+    public void reqPause() {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2
         paused = 2;
     }
 
-    public void reqResume() {//ÁøÇàÁßÀÏ¶§´Â 0
+    public void reqResume() {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½ 0
         paused = 0;
     }
 

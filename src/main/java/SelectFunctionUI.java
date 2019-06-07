@@ -48,6 +48,7 @@ public class SelectFunctionUI {
 
 	ActionListener flistener = new ActionListener() {
 		public void actionPerformed(ActionEvent listener) {
+			int k = 0;
 			try {
 				if(view.checkfunc(7) == 0)
 					return;
@@ -60,8 +61,15 @@ public class SelectFunctionUI {
 						selectfunction.setting = 0;
 						selectfunction.array = 1;
 						for(int i = 0; i < 4; i++) {
+							if(selectfunction.toSet[i] == 4) {
+								if(selectfunction.functionlist.alarm.alist.alarm.size() >= 1)
+									view.setalarmIcon();
+								k = 1;//k�� 1�̸� �˶� on 0�̸� off
+							}
 							selectfunction.toSet[i] = 0;
 						}
+						if(k == 0)
+							view.removealarmIcon();
 						for(int i = 0; i < 5; i++) {
 							selectfunction.showArray[i] = 0;
 						}
@@ -84,7 +92,9 @@ public class SelectFunctionUI {
 					showSet();
 				}
 
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener slistener = new ActionListener() {
@@ -96,7 +106,9 @@ public class SelectFunctionUI {
 				selectfunction.setFunction(0);
 				showSet();
 
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 
@@ -155,7 +167,9 @@ public class SelectFunctionUI {
 				}
 				selectfunction.setFunction(1);
 				showSet();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

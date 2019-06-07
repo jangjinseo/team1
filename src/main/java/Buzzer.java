@@ -36,12 +36,16 @@ public class Buzzer {
 						view.buzzerlb.setText("TimerBuzzerOn");
 						try {
 							Thread.sleep(500);
-						} catch (InterruptedException e) {}
+						} catch (InterruptedException e) {
+							System.out.println("Exception");
+						}
 						dur = dur + 500;
 						view.buzzerlb.setText("");
 						try {
 							Thread.sleep(500);
-						} catch (InterruptedException e) {}
+						} catch (InterruptedException e) {
+							System.out.println("Exception");
+						}
 						view.buzzerlb.setText("TimerBuzzerOn");
 					}
 				}
@@ -54,12 +58,16 @@ public class Buzzer {
 						view.buzzerlb.setText("AlarmBuzzerOn");
 						try {
 							Thread.sleep(500);
-						} catch (InterruptedException e) {}
+						} catch (InterruptedException e) {
+							System.out.println("Exception");
+						}
 						dur = dur + 500;
 						view.buzzerlb.setText("");
 						try {
 							Thread.sleep(500);
-						} catch (InterruptedException e) {}
+						} catch (InterruptedException e) {
+							System.out.println("Exception");
+						}
 						view.buzzerlb.setText("AlarmBuzzerOn");
 					}
 				}
@@ -78,7 +86,9 @@ public class Buzzer {
 						break;
 					try {
 						Thread.sleep(1000);
-					} catch (InterruptedException e) {}
+					} catch (InterruptedException e) {
+						System.out.println("Exception");
+					}
 					snoozeTime = snoozeTime + 1000;
 				}
 				beep(2);

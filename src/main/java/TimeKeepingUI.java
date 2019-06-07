@@ -137,7 +137,11 @@ public class TimeKeepingUI {
 					tk.saveValue = 0;
 					tk.part = 0;
 
-				} catch (RuntimeException e) {} catch (InterruptedException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				} catch (InterruptedException e) {
+					System.out.println("Exception");
+				}
 			}
 			else {
 				try {
@@ -153,7 +157,9 @@ public class TimeKeepingUI {
 					if(tk.part == 10)
 						tk.part = 0;
 
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 		}
 	};
@@ -166,7 +172,9 @@ public class TimeKeepingUI {
 
 				tk.setTimePart(0);
 				showSet();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener mlistener = new ActionListener() {
@@ -177,7 +185,9 @@ public class TimeKeepingUI {
 				}
 				if(tk.time.onoff == 0)
 					return;
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener rlistener = new ActionListener() {
@@ -189,7 +199,9 @@ public class TimeKeepingUI {
 
 				tk.setTimePart(1);
 				showSet();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

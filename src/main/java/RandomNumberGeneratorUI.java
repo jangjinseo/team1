@@ -74,7 +74,7 @@ public class RandomNumberGeneratorUI {
 				try {
 					if(view.checkfunc(5) == 0) {
 						return;
-					}//scope�� �÷��׷� ���
+					}
 					if(rng.scope == 0)
 						return;
 					rng.saveScope();
@@ -97,7 +97,9 @@ public class RandomNumberGeneratorUI {
 					view.hour.setText(digit[4]);
 					view.hour10.setText(digit[5]);
 					rng.part = 0;
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 			else {
 				try {
@@ -106,7 +108,9 @@ public class RandomNumberGeneratorUI {
 					}
 					rng.setScopePart(0);
 					showSet();
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 		}
 	};
@@ -120,7 +124,9 @@ public class RandomNumberGeneratorUI {
 
 				rng.saveScope();
 
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 
@@ -133,7 +139,9 @@ public class RandomNumberGeneratorUI {
 				rng.scope = 0;
 				rng.saveValue = 0;
 				rng.part = 1;
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener rlistener = new ActionListener() {
@@ -154,7 +162,9 @@ public class RandomNumberGeneratorUI {
 				}
 				rng.setScopePart(1);
 				showSet();
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

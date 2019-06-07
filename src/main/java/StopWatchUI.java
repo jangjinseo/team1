@@ -56,7 +56,9 @@ public class StopWatchUI {
 						return;
 					}
 
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 			else {
 				try {
@@ -110,7 +112,9 @@ public class StopWatchUI {
 					}
 					sw.reqStoreLapSplit();
 
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 		}
 	};
@@ -124,8 +128,9 @@ public class StopWatchUI {
 				if(sw.paused == 1) {
 					sw.start();
 				}
-				else if(sw.paused == 2)
+				else if(sw.paused == 2) {
 					sw.reqResume();
+				}
 				else if(sw.paused == 3) {
 					sw.reqNextLapSplit();
 
@@ -133,7 +138,9 @@ public class StopWatchUI {
 				else {
 					sw.reqPause();
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener mlistener = new ActionListener() {
@@ -142,7 +149,9 @@ public class StopWatchUI {
 				if(view.checkfunc(3) == 0) {
 					return;
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener rlistener = new ActionListener() {
@@ -162,7 +171,9 @@ public class StopWatchUI {
 				view.hour10.setText("0");
 				view.ampm.setText("");
 				view.daylb.setText("");
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

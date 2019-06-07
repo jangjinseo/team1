@@ -53,9 +53,13 @@ public class TimerUI {
 				if(view.checkfunc(2) == 0) {
 					return;
 				}
+				if(timer.part == 0)
+					return;
 				try {
 					timer.reqStartTimer();
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 			else {
 				try {
@@ -72,7 +76,9 @@ public class TimerUI {
 					if(timer.part == 0)
 						return;
 					timer.setTimerPart(0);
-				} catch (RuntimeException e) {}
+				} catch (RuntimeException e) {
+					System.out.println("Exception");
+				}
 			}
 		}
 	};
@@ -94,7 +100,9 @@ public class TimerUI {
 				timer.saveValue = 0;
 				if(timer.part == 7)
 					timer.part = 1;
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener mlistener = new ActionListener() {
@@ -103,7 +111,9 @@ public class TimerUI {
 				if(view.checkfunc(2) == 0) {
 					return;
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener rlistener = new ActionListener() {
@@ -120,7 +130,9 @@ public class TimerUI {
 				if(timer.part == 0)
 					return;
 				timer.setTimerPart(1);
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 

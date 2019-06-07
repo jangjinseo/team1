@@ -553,7 +553,9 @@ public class TimeKeeping {
 						while(time.onoff == 0) {
 							try {
 								Thread.sleep(300);
-							} catch (InterruptedException e) {}
+							} catch (InterruptedException e) {
+								System.out.println("Exception");
+							}
 						}
 					}
 					String sec = "";

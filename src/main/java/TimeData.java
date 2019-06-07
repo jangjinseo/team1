@@ -25,13 +25,17 @@ public class TimeData {
 					while(onoff == 0) {
 						try {
 							Thread.sleep(500);
-						} catch (InterruptedException e) {}
+						} catch (InterruptedException e) {
+							System.out.println("Exception");
+						}
 					}
 				}
 
 				try {
 					Thread.sleep(1000);
-				} catch (InterruptedException e) {}
+				} catch (InterruptedException e) {
+					System.out.println("Exception");
+				}
 				sec++;
 				if(sec == 10) {
 					sec10++;
