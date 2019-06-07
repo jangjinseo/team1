@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TimeDataTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-02T06:29:15" hostname="DESKTOP-MFUGTMO" time="0.219">
+  <properties/>
+  <testcase name="saveTimePart" classname="TimeDataTest" time="0.219"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
