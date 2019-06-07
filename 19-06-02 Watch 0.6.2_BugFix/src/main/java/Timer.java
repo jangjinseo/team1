@@ -171,7 +171,9 @@ public class Timer {
 						if(min == 59 && hour > 0) {
 							hour--;
 						}
-					} catch (InterruptedException e) {}
+					} catch (InterruptedException e) {
+						System.out.println("Exception");
+					}
 				}
 				view.sec.setText("0");
 				buzzer.beep(1);

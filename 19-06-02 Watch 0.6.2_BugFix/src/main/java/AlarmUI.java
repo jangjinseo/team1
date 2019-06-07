@@ -30,10 +30,10 @@ public class AlarmUI {
 		view.hour.setText(String.valueOf(alarm.hour));
 		view.hour10.setText(String.valueOf(alarm.hour10));
 		if(alarm.ison == 1) {
-			view.setDot(29);
+			view.setDot(30);
 		}
 		else {
-			view.removeDot(29);
+			view.removeDot(30);
 		}
 		if(alarm.sun == 1) {
 			view.setDot(0);
@@ -118,6 +118,7 @@ public class AlarmUI {
 					alarm.reqSaveAlarm();
 					view.ampm.setText("");
 					alarm.displayAlarmList();
+					view.setalarmIcon();
 				}
 				else {
 					if(alarm.alist.alarm.size() == 10) {
@@ -164,7 +165,9 @@ public class AlarmUI {
 					//System.out.println(alarm.part);
 					showSet();
 				}
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	ActionListener mlistener = new ActionListener() {
@@ -175,7 +178,9 @@ public class AlarmUI {
 				}
 				alarm.part = -1;
 				alarm.alarmIndex = 0;
-			} catch (RuntimeException e) {}
+			} catch (RuntimeException e) {
+				System.out.println("Exception");
+			}
 		}
 	};
 	MouseListener r2slistener = new MouseListener() {
@@ -213,8 +218,13 @@ public class AlarmUI {
 				}
 				if(alarm.buzzer.on == true)
 					alarm.buzzer.reqStop(2);
-				else
+				else {
 					alarm.reqDeleteAlarm();
+					if(alarm.alist.alarm.size() == 0) {
+						view.ampm.setText("");
+						view.removealarmIcon();
+					}
+				}
 
 			}
 			else {

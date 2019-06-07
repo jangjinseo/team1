@@ -11,17 +11,20 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.SwingConstants;
 
 public class View extends JFrame {
 	ImageIcon icon;
 	ImageIcon watchdot;
 	ImageIcon black;
+	ImageIcon alarmicon;
+	ImageIcon alarmonicon;
 	private JPanel contentPane;
 
 	Font customFont;
 	{
 		try {
-			customFont = Font.createFont(Font.TRUETYPE_FONT, new File("DSEG14ClassicMini-Regular.ttf")).deriveFont(Font.PLAIN, 28);
+			customFont = Font.createFont(Font.TRUETYPE_FONT, new File("DSEG14ClassicMini-Regular.ttf")).deriveFont(Font.PLAIN, 50);
 		} catch (FontFormatException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -29,10 +32,32 @@ public class View extends JFrame {
 		}
 	}
 
+	Font customFont_t;
+	{
+		try {
+			customFont_t = Font.createFont(Font.TRUETYPE_FONT, new File("DSEG14ClassicMini-Regular.ttf")).deriveFont(Font.PLAIN, 80);
+		} catch (FontFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void setalarmIcon() {
+		alarmLb.setIcon(alarmonicon);
+	}
+
+	public void removealarmIcon() {
+		alarmLb.setIcon(alarmicon);
+	}
+
 	public int currfunc = 1;
 	public String watchdotloca = "watchdot.jpg";
 	public String blackloca = "watchdotgray.jpg";
+	public String alarmloca = "black.jpg";
+	public String alarmonloca = "alarmon.jpg";
 
+	public JLabel alarmLb = new JLabel("");
 	public JButton btnMode = new JButton("Mode");
 	public JButton btnFunct = new JButton("Funct");
 	public JButton btnStart = new JButton("Start");
@@ -43,7 +68,6 @@ public class View extends JFrame {
 	public JLabel min10 = new JLabel("0");
 	public JLabel hour = new JLabel("0");
 	public JLabel hour10 = new JLabel("0");
-	public JPanel alarmImg = new JPanel();
 	public JLabel funcTest = new JLabel("");
 	public JLabel datelb = new JLabel("");
 	public JLabel monthlb = new JLabel("");
@@ -224,10 +248,11 @@ public class View extends JFrame {
 		watchdot = new ImageIcon("watchdot.jpg");
 		black = new ImageIcon(blackloca);
 		icon = new ImageIcon("watchnodot.jpg");
+		alarmicon = new ImageIcon(alarmloca);
+		alarmonicon = new ImageIcon(alarmonloca);
 
 		btnMode.setBounds(14, 66, 105, 27);
 		contentPane.add(btnMode);
-
 
 
 		btnFunct.setBounds(863, 66, 105, 27);
@@ -243,71 +268,68 @@ public class View extends JFrame {
 		sec.setForeground(Color.WHITE);
 
 
-		sec.setBounds(740, 496, 30, 36);
+		sec.setBounds(728, 459, 82, 99);
 		contentPane.add(sec);
 		sec10.setForeground(Color.WHITE);
 
 
-		sec10.setBounds(640, 496, 30, 36);
+		sec10.setBounds(628, 459, 83, 99);
 		contentPane.add(sec10);
 		min.setForeground(Color.WHITE);
 
 
-		min.setBounds(540, 496, 30, 36);
+		min.setBounds(528, 459, 77, 99);
 		contentPane.add(min);
 		min10.setForeground(Color.WHITE);
 
 
-		min10.setBounds(440, 496, 30, 36);
+		min10.setBounds(428, 459, 80, 99);
 		contentPane.add(min10);
 		hour.setForeground(Color.WHITE);
 
 
-		hour.setBounds(340, 496, 30, 36);
+		hour.setBounds(328, 459, 84, 99);
 		contentPane.add(hour);
 		hour10.setForeground(Color.WHITE);
 
 
-		hour10.setBounds(240, 496, 30, 36);
+		hour10.setBounds(228, 459, 82, 99);
 		contentPane.add(hour10);
 
 
-		alarmImg.setBounds(740, 649, 30, 27);
-		contentPane.add(alarmImg);
 
-
-
-		funcTest.setForeground(Color.WHITE);
-		funcTest.setBounds(240, 649, 250, 48);
+		funcTest.setForeground(Color.BLACK);
+		funcTest.setBounds(28, 0, 346, 93);
 		contentPane.add(funcTest);
 
 
 
 		datelb.setForeground(Color.WHITE);
-		datelb.setBounds(240, 382, 92, 48);
+		datelb.setBounds(250, 360, 137, 83);
 
 		contentPane.add(datelb);
 		monthlb.setForeground(Color.WHITE);
-		monthlb.setBounds(380, 382, 62, 48);
+		monthlb.setBounds(430, 360, 90, 83);
 
 		contentPane.add(monthlb);
 		daylb.setForeground(Color.WHITE);
-		daylb.setBounds(520, 382, 62, 48);
+		daylb.setBounds(550, 360, 90, 83);
 
 		contentPane.add(daylb);
+		ampm.setHorizontalAlignment(SwingConstants.RIGHT);
 		ampm.setForeground(Color.WHITE);
-		ampm.setBounds(720, 382, 46, 48);
+		ampm.setBounds(680, 360, 101, 83);
 
 		contentPane.add(ampm);
 
-		funcTest.setFont(customFont);
+		funcTest.setFont(new Font("굴림", Font.BOLD, 28));
 		ampm.setFont(customFont);
-		sec.setFont(customFont);
-		sec10.setFont(customFont);
-		min.setFont(customFont);
-		min10.setFont(customFont);
-		hour.setFont(customFont);
-		hour10.setFont(customFont);
+		sec.setFont(customFont_t);
+		sec10.setFont(customFont_t);
+		min.setFont(customFont_t);
+		min10.setFont(customFont_t);
+		hour.setFont(customFont_t);
+		hour10.setFont(customFont_t);
 		datelb.setFont(customFont);
 		daylb.setFont(customFont);
 		monthlb.setFont(customFont);
@@ -500,9 +522,14 @@ public class View extends JFrame {
 		contentPane.add(locaLCD60);
 		buzzerlb.setFont(customFont);
 		buzzerlb.setForeground(Color.WHITE);
-		buzzerlb.setBounds(380, 297, 240, 49);
+		buzzerlb.setBounds(380, 297, 260, 49);
 
 		contentPane.add(buzzerlb);
+		alarmLb.setHorizontalAlignment(SwingConstants.CENTER);
+
+
+		alarmLb.setBounds(472, 566, 84, 83);
+		contentPane.add(alarmLb);
 
 		vecAdd();
 		initDot();
